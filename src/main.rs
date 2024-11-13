@@ -69,4 +69,14 @@ fn main() {
     let media = (num1 + num2 + num3 + num4 + num5) / 5;
 
     println!("A média dos números é: {}", media);
+
+    let mut occurrences = std::collections::HashMap::new();
+
+    for &value in &[num1, num2, num3, num4, num5] {
+        *occurrences.entry(value).or_insert(0) += 1;
+    }
+
+    let mode = occurrences.into_iter().max_by_key(|&(_, count)| count).map(|(val, _)| val).unwrap_or(0);
+
+    println!("A moda dos números é: {}", mode);
 }
