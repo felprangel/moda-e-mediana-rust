@@ -40,4 +40,33 @@ fn main() {
     io::stdin()
         .read_line(&mut num5)
         .expect("Falha ao ler a linha");
+
+    let num1: u32 = match num1.trim().parse() {
+        Ok(num) => num,
+        Err(_) => 0,
+    };
+
+    let num2: u32 = match num2.trim().parse() {
+        Ok(num) => num,
+        Err(_) => 0,
+    };
+
+    let num3: u32 = match num3.trim().parse() {
+        Ok(num) => num,
+        Err(_) => 0,
+    };
+
+    let num4: u32 = match num4.trim().parse() {
+        Ok(num) => num,
+        Err(_) => 0,
+    };
+
+    let num5: u32 = match num5.trim().parse() {
+        Ok(num) => num,
+        Err(_) => 0,
+    };
+
+    let media = (num1 + num2 + num3 + num4 + num5) / 5;
+
+    println!("A média dos números é: {}", media);
 }
